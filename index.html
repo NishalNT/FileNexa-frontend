@@ -2,36 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FileShare</title>
+    <title>FileNexa</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <img src="./logo.png" alt="Inshare logo" class="logo" />
     <section class="upload-container">
       <form action="">
         <div class="drop-zone">
           <div class="icon-container">
-            <img
-              src="file.svg"
-              draggable="false"
-              class="center"
-              alt="File Icon"
-            />
-            <img
-              src="file.svg"
-              draggable="false"
-              class="left"
-              alt="File Icon"
-            />
-            <img
-              src="file.svg"
-              draggable="false"
-              class="right"
-              alt="File Icon"
-            />
+            <img src="file.svg" draggable="false" class="center" alt="File Icon" />
+            <img src="file.svg" draggable="false" class="left" alt="File Icon" />
+            <img src="file.svg" draggable="false" class="right" alt="File Icon" />
           </div>
           <input type="file" id="fileInput" />
           <div class="title">
@@ -41,7 +24,6 @@
       </form>
       <div class="progress-container">
         <div class="bg-progress"></div>
-
         <div class="inner-container">
           <div class="status">Uploading...</div>
           <div class="percent-container">
@@ -51,51 +33,27 @@
         </div>
       </div>
       <div class="sharing-container">
-        <p class="expire">Link expires in 24 hours</p>
-
+        <!-- <p class="expire">Link expires in 24 hours</p> -->
         <div class="input-container">
-            <div
-            id="qrCodeContainer"
-            class="qrCode-container"
-            style="margin: 0;"
-            >
-            <h3>Scan here</h3>
+          <div id="qrCodeContainer" class="qrCode-container" style="margin: 0;">
+            <h3 style="margin: 0;">Scan here</h3>
             <img src="" alt="qrcode" id="qrImage" />
           </div>
           <div class="url">
             <input type="text" id="fileURL" readonly />
-            <img
-              class="copy"
-              src="./copy-icon.svg"
-              id="copyURLBtn"
-              alt="copy to clipboard icon"
-            />
+            <img class="copy" src="./copy-icon.svg" id="copyURLBtn" alt="copy to clipboard icon" />
           </div>
         </div>
-
         <p class="email-info">Or Send via Email</p>
         <div class="email-container">
           <form id="emailForm">
             <div class="filed">
               <label for="fromEmail">Your email</label>
-              <input
-                type="email"
-                autocomplete="email"
-                required
-                name="from-email"
-                id="fromEmail"
-              />
+              <input type="email" autocomplete="email" required name="from-email" id="fromEmail" />
             </div>
-
             <div class="filed">
               <label for="toEmail">Receiver's email</label>
-              <input
-                type="email"
-                required
-                autocomplete="receiver"
-                name="to-email"
-                id="toEmail"
-              />
+              <input type="email" required autocomplete="receiver" name="to-email" id="toEmail" />
             </div>
             <div class="send-btn-container">
               <button type="submit">Send</button>
@@ -104,14 +62,12 @@
         </div>
       </div>
     </section>
-    <div class="toast"></div>
+    <div class="toast" id="toast">
+      <span class="message">Hello</span>
+      <button class="close-btn" onclick="closeToast()">×</button>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
-      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
   </body>
 </html>
