@@ -194,12 +194,12 @@ body,
 }
 
 .sharing-container .qrCode-container #qrImage{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow */
-  border: 5px solid;
-  border-image-slice: 1;
-  border-width: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* border: 5px solid; */
+  /* border-image-slice: 1; */
+  /* border-width: 2px; */
   padding: 2px;
-  border-image-source: linear-gradient(45deg, #03a9f4, #0288d1);
+  /* border-image-source: linear-gradient(45deg, #03a9f4, #0288d1); */
 }
 
 .sharing-container .url {
