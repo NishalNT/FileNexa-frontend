@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const qrImage = document.getElementById("qrImage");
 
   const baseURL = "https://filenexa-backend.onrender.com";
-  // const baseURL = "http://localhost:4000";
   const uploadURL = `${baseURL}/api/files`;
   const emailURL = `${baseURL}/api/files/send`;
   const maxAllowedSize = 100 * 1024 * 1024; // 100MB
@@ -73,6 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   fileInput.addEventListener("change", () => {
+    if (fileInput.files.length === 0) return;
+
     if (fileInput.files[0].size > maxAllowedSize) {
       showToast("Max file size is 100MB");
       fileInput.value = ""; // Reset the input
@@ -95,6 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("file added uploading");
 
     const files = fileInput.files;
+    if (files.length === 0) return;
+
     const formData = new FormData();
     formData.append("myfile", files[0]);
 
